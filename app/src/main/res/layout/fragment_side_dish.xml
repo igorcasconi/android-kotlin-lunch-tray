@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.SideDish">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.igorcasconi.lunchtray.model.LunchViewModel" />
+        <variable
+            name="sideDishFragment"
+            type="com.igorcasconi.lunchtray.ui.SideDish" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/radio_group_side_dish"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RadioButton
+                    android:id="@+id/option_side_dish_1"
+                    style="@style/Widget.LunchTray.CompoundButton.RadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text='@{viewModel.menuItems["salad"].name}'
+                    android:checked='@{viewModel.sideDish.name.equals(@string/option_dish_1)}'
+                    android:onClick='@{() -> viewModel.setSide("salad")}'/>
+
+                <TextView
+                    android:id="@+id/option_side_dish_1_description"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{viewModel.menuItems["salad"].description}'
+                    />
+
+                <TextView
+                    android:id="@+id/option_side_dish_1_price"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{@string/option_price(viewModel.menuItems["salad"].price)}' />
+
+                <View
+                    android:id="@+id/view"
+                    style="@style/Widget.LunchTray.Divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/option_side_dish_2"
+                    style="@style/Widget.LunchTray.CompoundButton.RadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{viewModel.menuItems["soup"].name}'
+                    android:checked='@{viewModel.sideDish.name.equals(@string/option_dish_2)}'
+                    android:onClick='@{() -> viewModel.setSide("soup")}'/>
+
+                <TextView
+                    android:id="@+id/option_side_dish_2_description"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{viewModel.menuItems["soup"].description}'/>
+
+                <TextView
+                    android:id="@+id/option_side_dish_2_price"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{@string/option_price(viewModel.menuItems["soup"].price)}' />
+
+                <View
+                    android:id="@+id/view2"
+                    style="@style/Widget.LunchTray.Divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/option_side_dish_3"
+                    style="@style/Widget.LunchTray.CompoundButton.RadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{viewModel.menuItems["potatoes"].name}'
+                    android:checked='@{viewModel.sideDish.name.equals(@string/option_dish_3)}'
+                    android:onClick='@{() -> viewModel.setSide("potatoes")}'/>
+
+                <TextView
+                    android:id="@+id/option_side_dish_3_description"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{viewModel.menuItems["potatoes"].description}' />
+
+                <TextView
+                    android:id="@+id/option_side_dish_3_price"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{@string/option_price(viewModel.menuItems["potatoes"].price)}' />
+
+                <View
+                    android:id="@+id/view3"
+                    style="@style/Widget.LunchTray.Divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/option_side_dish_4"
+                    style="@style/Widget.LunchTray.CompoundButton.RadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{viewModel.menuItems["rice"].name}'
+                    android:checked='@{viewModel.sideDish.name.equals(@string/option_dish_4)}'
+                    android:onClick='@{() -> viewModel.setSide("rice")}'/>
+
+                <TextView
+                    android:id="@+id/option_side_dish_4_description"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{viewModel.menuItems["rice"].description}' />
+
+                <TextView
+                    android:id="@+id/option_side_dish_4_price"
+                    style="@style/Widget.MenuItem.TextView.Info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text='@{@string/option_price(viewModel.menuItems["rice"].price)}' />
+
+                <View
+                    android:id="@+id/view4"
+                    style="@style/Widget.LunchTray.Divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/text_subtotal"
+                style="@style/Widget.LunchTray.TextView.Subtotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text='@{@string/subtotal(viewModel.subTotal)}'
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/radio_group_side_dish" />
+
+            <Button
+                android:id="@+id/button_cancel"
+                style="@style/Widget.Order.Button.Cancel"
+                app:layout_constraintTop_toTopOf="@id/button_next"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/button_next"
+                android:onClick='@{() -> sideDishFragment.cancelOrder()}'/>
+
+            <Button
+                android:id="@+id/button_next"
+                style="@style/Widget.Order.Button.Next"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_subtotal"
+                app:layout_constraintStart_toEndOf="@id/button_cancel"
+                android:onClick='@{() -> sideDishFragment.goToNextScreen()}'/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

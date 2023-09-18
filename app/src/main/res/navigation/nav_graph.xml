@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startOrder">
+
+    <fragment
+        android:id="@+id/startOrder"
+        android:name="com.igorcasconi.lunchtray.ui.StartOrder"
+        android:label="Start your order"
+        tools:layout="@layout/fragment_start_order">
+        <action
+            android:id="@+id/action_startOrder_to_entreeOrderFragment"
+            app:destination="@id/entreeOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/entreeOrderFragment"
+        android:name="com.igorcasconi.lunchtray.ui.EntreeOrderFragment"
+        android:label="Entree dish"
+        tools:layout="@layout/fragment_entree_order">
+        <action
+            android:id="@+id/action_entreeOrderFragment_to_sideDish"
+            app:destination="@id/sideDish" />
+        <action
+            android:id="@+id/action_entreeOrderFragment_to_startOrder"
+            app:destination="@id/startOrder" />
+    </fragment>
+    <fragment
+        android:id="@+id/sideDish"
+        android:name="com.igorcasconi.lunchtray.ui.SideDish"
+        android:label="Side dish"
+        tools:layout="@layout/fragment_side_dish">
+        <action
+            android:id="@+id/action_sideDish_to_accompanimentDish"
+            app:destination="@id/accompanimentDish" />
+        <action
+            android:id="@+id/action_sideDish_to_startOrder"
+            app:destination="@id/startOrder" />
+    </fragment>
+    <fragment
+        android:id="@+id/accompanimentDish"
+        android:name="com.igorcasconi.lunchtray.ui.AccompanimentDish"
+        android:label="Accompaniment dish"
+        tools:layout="@layout/fragment_accompaniment_dish">
+        <action
+            android:id="@+id/action_accompanimentDish_to_summaryOrder"
+            app:destination="@id/summaryOrder" />
+        <action
+            android:id="@+id/action_accompanimentDish_to_startOrder"
+            app:destination="@id/startOrder" />
+    </fragment>
+    <fragment
+        android:id="@+id/summaryOrder"
+        android:name="com.igorcasconi.lunchtray.ui.SummaryOrder"
+        android:label="Summary order"
+        tools:layout="@layout/fragment_summary_order">
+        <action
+            android:id="@+id/action_summaryOrder_to_startOrder2"
+            app:destination="@id/startOrder" />
+    </fragment>
+</navigation>

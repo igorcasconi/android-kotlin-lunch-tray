@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.SummaryOrder">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.igorcasconi.lunchtray.model.LunchViewModel" />
+        <variable
+            name="summaryOrderFragment"
+            type="com.igorcasconi.lunchtray.ui.SummaryOrder" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_horizontal_margin"
+            >
+
+            <TextView
+                style="@style/Widget.LunchTray.TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Order Summary"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/entree_dish_selected"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.LunchTray.TextView.CheckoutItem.Info"
+                    android:text='@{viewModel.entreeDish.name}'
+                    android:layout_weight="1"/>
+                <TextView
+                    android:id="@+id/entree_entree_dish_selected_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.LunchTray.TextView.CheckoutItem.Info"
+                    android:text='@{@string/option_price(viewModel.entreeDish.price)}'
+                    android:gravity="end"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/side_dish_selected"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.LunchTray.TextView.CheckoutItem.Info"
+                    android:text='@{viewModel.sideDish.name}'
+                    android:layout_weight="1"/>
+                <TextView
+                    android:id="@+id/entree_side_dish_selected_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.LunchTray.TextView.CheckoutItem.Info"
+                    android:text='@{@string/option_price(viewModel.sideDish.price)}'
+                    android:gravity="end"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/accompaniment_dish_selected"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.LunchTray.TextView.CheckoutItem.Info"
+                    android:text='@{viewModel.accompanimentDish.name}'
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/entree_accompaniment_dish_selected_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.LunchTray.TextView.CheckoutItem.Info"
+                    android:text='@{@string/option_price(viewModel.accompanimentDish.price)}'
+                    android:gravity="end"
+                    />
+            </LinearLayout>
+
+            <View style="@style/Widget.LunchTray.Divider" />
+
+            <TextView
+                android:id="@+id/subtotal_order"
+                style="@style/Widget.LunchTray.TextView.CheckoutItem.Info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text='@{@string/subtotal_order(viewModel.subTotal)}'
+                android:gravity="end"
+                 />
+
+            <TextView
+                android:id="@+id/tax_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.LunchTray.TextView.CheckoutItem.Info"
+                android:text='@{@string/tax(viewModel.tax)}'
+                android:gravity="end"/>
+
+            <TextView
+                android:id="@+id/total_order"
+                style="@style/Widget.LunchTray.TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text='@{@string/total(viewModel.total)}'
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button_submit"
+                style="@style/Widget.Order.Button.Next"
+                android:text="@string/button_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick='@{() -> summaryOrderFragment.finishOrder()}'
+                />
+
+            <Button
+                android:id="@+id/button_cancel"
+                style="@style/Widget.Order.Button.Cancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="0dp"
+                android:onClick='@{() -> summaryOrderFragment.cancelOrder()}'
+                />
+        </LinearLayout>
+    </ScrollView>
+</layout>

@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Lunch Tray</string>
+    <string name="button_start_order">Start Order</string>
+    <string name="option_entree_1">Cauliflower</string>
+    <string name="option_entree_2">Three Bean Chili</string>
+    <string name="option_entree_3">Mushroom Pasta</string>
+    <string name="option_entree_4">Spicy Black Bean Skillet</string>
+    <string name="subtotal">Subtotal %s</string>
+    <string name="subtotal_order">Subtotal: %s</string>
+    <string name="total">TOTAL ORDER: %s</string>
+    <string name="option_dish_1">Summer Salad</string>
+    <string name="option_dish_2">Butternut Squash Soup</string>
+    <string name="option_dish_3">Spicy Potatoes</string>
+    <string name="option_dish_4">Coconut Rice</string>
+    <string name="option_accompaniment_1">Lunch Roll</string>
+    <string name="option_accompaniment_2">Mixed Berries</string>
+    <string name="option_accompaniment_3">Pickled Veggies</string>
+    <string name="tax">Tax: %s</string>
+    <string name="button_submit">Submit Order</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_next">Next</string>
+    <string name="success_order">Order Submitted!</string>
+    <string name="option_price">$ %,.2f</string>
+</resources>
